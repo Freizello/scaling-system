@@ -1,0 +1,3 @@
+1. Post full URL dan kembalikan response json {"original_url":"www.google.com","short_url":1}
+2. validasi invalid url dengan core module nodejs "dns.lookup(host, cb)", jika valid insert ke database dengan id, jika tidak, response dengan "URL invalid"
+3. Get URL "shrinkrl.com/url/[id_original_url]" cari id_original_url di database, lalu ambil original_url tersebut.
