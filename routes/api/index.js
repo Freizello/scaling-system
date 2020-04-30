@@ -2,8 +2,8 @@ const express = require('express'),
       apiController = require('../../controllers/api'),
       router = express.Router();
 
-routePrefix = "/api"
-
-router.all(`${routePrefix}`, apiController.getIndex)
+// baseroute = /api
+router.get('/', apiController.getIndex)
+router.post(`/new`, apiController.createUrl)
 
 module.exports = router;
