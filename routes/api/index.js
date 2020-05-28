@@ -5,5 +5,6 @@ const express = require('express'),
 // baseroute = /api
 router.get('/', apiController.getIndex)
 router.post(`/new`, apiController.createUrl)
+router.get(`/all`, apiController.getAllUrl)
 
 module.exports = router;

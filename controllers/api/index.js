@@ -3,8 +3,28 @@ const Url = require('../../models/urls')
 
 exports.getIndex = (req, res) => {
   res.json({
-    status: "success",
-    requestBody : req.get('host')
+    status: "success"
+  })
+}
+
+exports.getAllUrl = (req, res) => {
+  const query = Url.find({})
+  query.exec((err, doc) => {
+    if (err) {
+      console.log(err)
+    }
+
+    if (!doc.length) {
+      res.json({
+        status: "success",
+        urls: "url not found or empty"
+      })
+    } else {
+      res.json({
+        status: "success",
+        urls : doc
+      })      
+    }
   })
 }
 
